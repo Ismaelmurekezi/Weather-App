@@ -58,15 +58,15 @@ function getWeatherIcon(condition) {
         <p>Description: ${data.description}</p>
       </div>
       <div class="weather-info-item">
-        <img src="${getWeatherIcon('Temperature')}" class="weather-icon"  alt="Temperature Icon">
+        <img src="${getWeatherIcon('Temperature')}" class="weather-icon" id="temp"  alt="Temperature Icon">
         <p>Temperature: ${data.temperature} &#8451;</p>
       </div>
       <div class="weather-info-item">
-        <img src="${getWeatherIcon('Wind speed')}" class="weather-icon" alt="Wind Speed Icon">
+        <img src="${getWeatherIcon('Wind speed')}" class="weather-icon" id="wind"  alt="Wind Speed Icon">
         <p>Wind Speed: ${data.windSpeed} km/h</p>
       </div>
       <div class="weather-info-item">
-        <img src="${getWeatherIcon('Humidity')}" class="weather-icon" alt="Humidity Icon">
+        <img src="${getWeatherIcon('Humidity')}" class="weather-icon" id="humidity" alt="Humidity Icon">
         <p>Humidity: ${data.humidity}%</p>
       </div>
       
@@ -77,7 +77,7 @@ function getWeatherIcon(condition) {
 
   
   async function getDefaultWeather() {
-    const defaultLocation = 'Kigali, Rwanda'; // Default location
+    const defaultLocation = 'Kigali'; // Default location
     const defaultWeatherData = await fetchWeatherData(defaultLocation);
     const processedDefaultData = processWeatherData(defaultWeatherData);
     if (processedDefaultData) {
